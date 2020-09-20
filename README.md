@@ -1,25 +1,25 @@
-# alice-cli
+# allen-cli
 由于公司使用框架种类繁多，框架官方提供脚手架配置差异巨大和打包速度较慢，需要一套统一的脚手架
 ## 使用截图
 ![image](./doc/alice.gif)
 ## 安装
 ```
-npm i alice-cli -g
-cnpm i alice-cli -g
-yarn add alice-cli -g
+npm i allen-cli -g
+cnpm i allen-cli -g
+yarn add allen-cli -g
 ```
 ## 功能
 ### 项目初始化
 ```
-alice init <you project name>
+allen init <you project name>
 ```
 ### 帮助
 ```
-alice help
+allen help
 ```
 ### 查看版本
 ```
-alice -V
+allen -V
 ```
 ## 提供模板
 ### 1. vue 2.0
