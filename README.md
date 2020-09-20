@@ -1,8 +1,6 @@
 # allen-cli
 项目脚手架，整合各个模板，一键生成模板。提高生产力
 
-## 使用截图
-![image](./doc/alice.gif)
 ## 安装
 ```
 npm i allen-cli -g
