@@ -1,6 +1,6 @@
 {
   "name": "allen-cli",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "一套快速生成项目的脚手架",
   "main": "index.js",
   "scripts": {
@@ -12,28 +12,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LienJack/alice-cli.git"
+    "url": "https://github.com/kkxiaojun/allen-cli.git"
   },
-  "author": "dajun",
+  "author": "kkxiaojun",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "commander": "^2.20.0",
-    "download-git-repo": "^1.1.0",
-    "ejs": "^2.6.2",
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "download-git-repo": "^3.0.2",
+    "ejs": "^2.7.4",
     "git-clone": "^0.1.0",
-    "glob": "^7.1.4",
+    "glob": "^7.1.6",
     "handlebars": "^4.7.6",
-    "inquirer": "^6.4.1",
+    "inquirer": "^6.5.2",
     "latest-version": "^5.1.0",
-    "log-symbols": "^3.0.0",
+    "log-symbols": "^4.0.0",
     "metalsmith": "^2.3.0",
     "minimatch": "^3.0.4",
-    "ora": "^3.4.0",
-    "rimraf": "^2.6.3",
-    "wrap-ansi": "^6.0.0"
+    "ora": "^5.1.0",
+    "rimraf": "^3.0.2",
+    "wrap-ansi": "^7.0.0"
   },
-  "homepage": "",
+  "homepage": "https://github.com/kkxiaojun/allen-cli.git",
   "devDependencies": {},
   "keywords": [
     "cli",

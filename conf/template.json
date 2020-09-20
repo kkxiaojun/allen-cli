@@ -2,43 +2,18 @@
   "vue": {
     "name": "基于vue2项目",
     "value": "vue",
-    "git": "https://github.com/LienJack/vue-template-cli.git#template",
+    "git": "https://github.com/kkxiaojun/vue-tpl.git",
     "options": []
   },
-  "react": {
-    "name": "基于react16项目",
-    "value": "react",
-    "git": "https://github.com/LienJack/template-react.git#template",
-    "options": []
+  "vue-multi-page": {
+    "name": "基于vue的活动页h5多页面",
+    "value": "vue",
+    "git": "https://github.com/kkxiaojun/vue-multi-page.git"
   },
-  "electron-react": {
-    "name": "基于electron + react项目(todo)",
-    "value": "electron-react",
-    "git": "https://github.com/LienJack/templates-react-electron.git",
+  "rollup": {
+    "name": "rollup做构建工具，编写组件或库",
+    "value": "rollup",
+    "git": "https://github.com/kkxiaojun/rollup-tpl.git",
     "options": []
-  },
- "typscript-react": {
-  "name": "基于typscript + react",
-  "value": "typscript-react",
-  "git": "https://github.com/LienJack/template-react-ts.git",
-  "options": []
- },
- "rollup": {
-  "name": "使用rollup做构建工具，适用于编写组件或库",
-  "value": "rollup",
-  "git": "https://github.com/LienJack/rollup-template.git",
-  "options": []
- },
- "typscript-env": {
-   "name": "快速生成typscript环境，用于做实验",
-   "value": "typscript-env",
-   "git": "https://github.com/LienJack/typescript-env-template",
-   "options": []
- },
- "es6-env": {
-  "name": "快速生成es6+环境，用于做实验",
-  "value": "es6-env",
-  "git": "https://github.com/LienJack/es6.git",
-  "options": []
- }
+  }
 }

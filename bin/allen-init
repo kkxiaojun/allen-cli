@@ -1,14 +1,33 @@
 #!/usr/bin/env node
+
 // NODE moudle
+//  node.js 命令行解决方案
 const program = require("commander");
+
+// node.js path模块
 const path = require("path");
+
+// node.js fs模块
 const fs = require("fs");
+
+// 常见的交互式命令行用户接口的集合
 const inquirer = require("inquirer");
+
+// 使用shell模式匹配文件
 const glob = require("glob");
+
+// 活动最新的npm包
 const latestVersion = require("latest-version");
+
+// node.js 子进程
 const spawn = require("child_process").spawn;
+
+// node.js 命令行环境的 loading效果， 和显示各种状态的图标
 const ora = require("ora");
+
+// The UNIX command rm -rf for node.
 const rm = require("rimraf").sync;
+
 // file
 const dowload = require("../lib/download");
 const log = require('../utils/log')
@@ -21,32 +40,42 @@ program.usage("<project-name>").parse(process.argv);
 // 根据输入，获取项目名称
 let projectName = program.args[0];
 if (!projectName) {
-  // project-name 必填
   // 相当于执行命令的--help选项，显示help信息，这是commander内置的一个命令选项
   program.help();
   return;
 }
+
+// 返回 Node.js 进程的当前工作目录
 let rootName = path.basename(process.cwd());
 // 项目初始化
 main();
 /**
- * 主进程
+ * 主进程main函数
  */
 async function main() {
   let projectRoot, templateName
   try {
     console.log("检测版本");
-    let isUpate = await checkVersion(); // 检测版本
-    if (isUpate) await updateCli(); // 更新版本
-    console.log("创建路径");
-    projectRoot = await checkDir(); // 检测路径
-    makeDir(projectRoot) // 创建路径
-    let { git } = await selectTemplate(); // 模板选择
+    // 检测版本
+    let isUpate = await checkVersion();
+    // 更新版本
+    if (isUpate) await updateCli();
+    // 检测路径
+    projectRoot = await checkDir();
+    // 创建路径
+    makeDir(projectRoot)
+    // 选择模板
+    let { git } = await selectTemplate();
+    // 下载模板
     templateName = await dowload(rootName, git);
+    // 本地配置
     let customizePrompt = await getCustomizePrompt(templateName, CONST.CUSTOMIZE_PROMPT)
+    // 渲染本地配置
     await render(projectRoot, templateName, customizePrompt);
-    deleteCusomizePrompt(projectRoot) // 删除没用的文件
-    afterBuild(); // 构建结束
+    // 删除无用文件
+    deleteCusomizePrompt(projectRoot)
+    // 构建结束
+    afterBuild();
   } catch (err) {
     log.error(`创建失败：${err.message}`)
     afterError(projectRoot, templateName)
@@ -57,7 +86,7 @@ async function main() {
  */
 function checkVersion() {
   return new Promise(async (resolve, reject) => {
-    let webVersion = await latestVersion("alice-cli");
+    let webVersion = await latestVersion(`${CONST.CLI_NAME}`);
     let localVersion = require("../package.json").version;
     console.log(`本地版本${localVersion}, 最新版本${webVersion}`);
     let webVersionArr = webVersion.split(".");
@@ -75,7 +104,7 @@ function updateCli() {
   return new Promise(async resolve => {
     const promptArr = configDefalut.updateNPMPrompt;
     let { npmType } = await inquirer.prompt(promptArr);
-    const spinner = ora(`更新alice-cli中`);
+    const spinner = ora(`更新${CONST.CLI_NAME}中`);
     let status;
     switch (npmType) {
       case "npm":
