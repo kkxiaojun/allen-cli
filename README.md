@@ -1,6 +1,7 @@
 # allen-cli
 项目脚手架，整合各个模板，一键生成模板。提高生产力
 
+[更详细的文档请戳这](https://juejin.im/post/6874815221174075405)
 ## 效果
 ![image](./doc/demo.gif)
 
